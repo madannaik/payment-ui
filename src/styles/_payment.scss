@@ -1,0 +1,175 @@
+.payment {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(44, 39, 39);
+  background-image: url("../assets/abstract-envelope\ \(1\).svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+
+  @media (max-width: 800px) {
+    // background-image: none;
+  }
+  &__card {
+    width: 30%;
+    height: 48rem;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    // background-color: ;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    // box-shadow: 0 0.1rem 0.7rem rgba(white, 0.6);
+    box-shadow: 0 0.2rem 1rem rgba(black, 0.6);
+    backdrop-filter: 10px;
+
+    @media (min-width: 320px) {
+      width: 95%;
+    }
+    @media (min-width: 600px) {
+      width: 90%;
+    }
+    @media (min-width: 900px) {
+      width: 65%;
+    }
+    @media (min-width: 1024px) {
+      width: 45%;
+    }
+    @media (min-width: 1200px) {
+      width: 30%;
+    }
+    @media (min-width: 1440px) {
+      width: 40%;
+    }
+  }
+  &__form {
+    & > h1 {
+      padding: 0;
+      margin: 0 0 3rem 0;
+      font-size: 3rem;
+      letter-spacing: 0.7rem;
+
+      // font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    & &--cardno,
+    & &--email,
+    & &--cardname,
+    & &--country {
+      margin: 1.6rem;
+      position: relative;
+      transition: all 0.5s;
+      & > input {
+        width: 100%;
+        padding: 1rem;
+        transition: all 0.3s;
+        outline: none;
+        &::placeholder {
+          font-family: "Noto Sans JP", sans-serif;
+          color: black;
+        }
+        &:focus {
+          transition: all 0.1s;
+          border: 2px solid rgb(91, 53, 179);
+        }
+        & + label {
+          color: rgb(0, 0, 0);
+          position: absolute;
+          left: 2%;
+          top: -25%;
+          transition: all 0.3s;
+          background-color: white;
+        }
+        &:placeholder-shown + label {
+          transition: all 0.3s;
+          opacity: 0;
+          left: 2%;
+          top: 25%;
+        }
+      }
+    }
+    & &--exp {
+      margin: 1.6rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      div {
+        position: relative;
+        flex: 0 0 50%;
+        & > input {
+          width: 100%;
+          padding: 1rem;
+          transition: all 0.3s;
+
+          & + label {
+            color: rgb(0, 0, 0);
+            position: absolute;
+            left: 2%;
+            top: -25%;
+            transition: all 0.3s;
+            background-color: white;
+          }
+          &:placeholder-shown + label {
+            transition: all 0.3s;
+            opacity: 0;
+            left: 2%;
+            top: 25%;
+          }
+        }
+      }
+      // @media (min-width:320px) {
+      //   margin: 1.6rem;
+      // }
+      // @media (min-width:700px) {
+      //   margin: 1.6rem 1.4rem;
+      // }
+      // @media (min-width:900px) {
+      //   margin: 1.6rem 1.4rem;
+      // }
+      // @media (min-width:1024px) {
+      //   margin: 1.6rem 1.5rem;
+      // }
+      // @media (min-width:1200px) {
+      //   margin: 1.6rem 4rem;
+      // }
+      // @media (min-width:1440px) {
+      //   margin: 1.6rem 3.1rem;
+      // }
+    }
+
+    &--submit {
+      padding: 1rem;
+      color: white;
+      width: 92%;
+      margin-top: 1.5rem;
+      background-color: rgb(38, 83, 231);
+      outline: none;
+      border: none;
+      box-shadow: 0 0.3rem 1rem rgb(77, 77, 77);
+      position: relative;
+      overflow: hidden;
+      // transition: all 0.5s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 10%;
+        padding-top: 10%;
+        left: 45%;
+        top: 0%;
+        transform: scale(0);
+        opacity: 0.1;
+        transition: all 0.5s;
+        border-radius: 100%;
+      }
+
+      &:hover::before {
+        transform: scale(50);
+      }
+    }
+  }
+}
