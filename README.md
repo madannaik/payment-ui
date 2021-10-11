@@ -11,7 +11,7 @@
 </ol>
 
 <hr>
-###### Screenshots
+##### Screenshots
 <hr>
 1.
 <img src="./src/assets/1.png">
